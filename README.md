@@ -1,2 +1,2 @@
 # codewars
-My codewars answerds
+My codewars answers
