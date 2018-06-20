@@ -17,23 +17,19 @@
 # Input: [2, 4, -2, -3, 8]
 #
 # Output: 9 // 2 + 4 + (-2) + (-3) + 8
-#
 
-inputs = [-5, -3, -1]
-idx = inputs.index(max(inputs))
 
-tmp_max = 0
-sum_max = inputs[idx]
-# left
-for n in inputs[idx::-1]:
-    tmp_max += n
-    if tmp_max > sum_max:
-        sum_max = tmp_max
+def solution(inputs):
+    current_sum = max_sum = inputs[0]
+    for i, n in enumerate(inputs):
+        if i == 0:
+            continue
+        current_sum = max(n, current_sum + n)
+        max_sum = max(max_sum, current_sum)
+    return max_sum
 
-# right
-tmp_max = 0
-for n in inputs[idx:]:
-    tmp_max += n
-    if tmp_max > sum_max:
-        sum_max = tmp_max
-print sum_max
+
+print solution([-1, 3, -1, 5])      # 7
+print solution([-5, -3, -1])        # -1
+print solution([2, 4, -2, -3, 8])   # 9
+print solution([3, -1, -1, 3])      # 4
