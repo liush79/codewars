@@ -11,6 +11,9 @@ class CommonTest(TestCase):
     def describe(self, desc):
         print (desc)
 
+    def it(self, it):
+        print (it)
+
     def expect(self, result, msg=None):
         if msg:
             print (msg)
