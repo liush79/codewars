@@ -20,19 +20,19 @@ from common import Test
 #         res += n[len_n]
 #     return res
 
-# def reverse_fun(n):
-#     res = [n[-(i + 1)] + n[i] for i in range(0, len(n) / 2)]
-#     if len(n) % 2 > 0:
-#         res += n[len(n) / 2]
-#     return ''.join(res)
-
 def reverse_fun(n):
-    n = list(n)
-    len_n = len(n)
-    for i in range(0, len_n - 1):
-        for j in range(i, i + (len_n - i) / 2):
-            n[j], n[-((j-i)+1)] = n[-((j-i)+1)], n[j]
-    return ''.join(n)
+    res = [n[-(i + 1)] + n[i] for i in range(0, len(n) / 2)]
+    if len(n) % 2 > 0:
+        res += n[len(n) / 2]
+    return ''.join(res)
+
+# def reverse_fun(n):
+#     n = list(n)
+#     len_n = len(n)
+#     for i in range(0, len_n - 1):
+#         for j in range(i, i + (len_n - i) / 2):
+#             n[j], n[-((j-i)+1)] = n[-((j-i)+1)], n[j]
+#     return ''.join(n)
 
 Test.describe("reverse_fun example testcases")
 Test.it("should work for even length")
