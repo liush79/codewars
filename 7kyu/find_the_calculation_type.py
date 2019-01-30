@@ -2,7 +2,7 @@ from common import Test
 
 
 def calc_type(a, b, res):
-    # we don't check divisioin is true, because 'Only valid arguments will be passed to the function.'
+    # we don't check division is true, because 'Only valid arguments will be passed to the function.'
     return 'addition' if a + b == res else 'subtraction' if a - b == res else 'multiplication' if a * b == res else 'division'
 
 
